@@ -1,0 +1,9 @@
+/* Base styles shared by subpages */
+html,body{background:#0b1220;color:#e2e8f0}
+
+/* Simple header/nav used on some subpages */
+.site-header{position:sticky;top:0;background:#0b1220cc;border-bottom:1px solid #1f2937;backdrop-filter:saturate(1.1) blur(6px)}
+.site-nav{max-width:1100px;margin:0 auto;padding:12px 16px;display:flex;align-items:center;gap:16px}
+.site-nav .brand{font-weight:700;letter-spacing:.2px;color:#e2e8f0;text-decoration:none;margin-right:auto}
+.site-nav nav a{color:#e2e8f0;opacity:.9;text-decoration:none;margin-right:14px}
+.site-nav nav a[aria-current="page"]{color:#93c5fd;opacity:1}
