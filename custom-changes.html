@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Custom Changes — Eventide XI</title>
+    <meta name="description" content="Summary of Eventide XI custom gameplay changes." />
+    <link rel="stylesheet" href="site.css" />
+    <style>
+      /* Page-local styles for Custom Changes */
+      main h2 {
+        text-align: center;
+      }
+      main ul,
+      main ol {
+        padding-left: 2rem;
+      }
+      /* Stretch columns to equal height on wider screens */
+      @media (min-width: 901px) {
+        main .split,
+        main .split-reverse {
+          align-items: stretch;
+        }
+        main .media-stack {
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+  <body data-page="custom-changes">
+    <header>
+      <div class="nav">
+        <img src="assets/blue slime.png" alt="Blue slime" loading="eager" fetchpriority="high" />
+        <nav class="menu" aria-label="Main">
+          <a href="index.html">Home</a>
+          <a href="custom-changes.html" aria-current="page">Custom Changes</a>
+          <a href="install.html">Install</a>
+          <a href="patch-notes.html">Patch Notes</a>
+          <a href="https://discord.gg/mWQnQ2Hdab" target="_blank" rel="noopener">Discord</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="container custom-changes-title">
+        <h1>Custom Changes</h1>
+      </div>
+
+      <section class="stripe" id="mastery">
+        <div class="container">
+          <div class="split-reverse">
+            <div class="info-dump">
+              <h2>Mastery System</h2>
+              <p>
+                Every job has a set of Mastery tasks that unlock permanent bonuses, abilities, or mechanical upgrades.
+                Mastery gives jobs identity and progression without raising the level cap
+              </p>
+              <ul>
+                <li>Five tiers of mastery</li>
+                <li>Completing a mastery level will give that job a permanent upgrade</li>
+                <li>
+                  Some abilities that can be unlocked: <em>Flurry</em>, <em>Double Shot</em>, <em>Steady Wing</em>,
+                  <em>Tactical Switch</em> <em>Afflatus Solace/Misery</em>, <em>Sacrosanctity</em>,
+                  <em>Overwhelm</em> (without facing requirements)
+                </li>
+
+                <li>Currently three masteries to unlock and more in development</li>
+              </ul>
+            </div>
+            <div class="media-stack">
+              <div class="media">
+                <img src="assets/blm+mastery.png" alt="Black Mage Mastery UI" loading="lazy" decoding="async" />
+              </div>
+              <div class="media">
+                <img src="assets/mastery.png" alt="Mastery overview" loading="lazy" decoding="async" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="stripe" id="materia">
+        <div class="container">
+          <div class="split">
+            <div class="info-dump">
+              <h2>Materia System</h2>
+              <p>Inspired by FFVII, Materia can be socketed into gear to add stats and customize builds.</p>
+              <ul>
+                <li>Tier 1 & 2 Materia currently available</li>
+                <li>Tier 1 Materia can be unlocked and then bought with gil</li>
+                <li>Tier 2 Materia earned through Dynamis, Sea, ZNMs, HNMs, quests, missions, and other content</li>
+                <li>Materia can be acquired from Oboro and specialist NPCs in Jeuno</li>
+                <li>Many gear pieces become viable through custom stat tailoring</li>
+                <li><code>!mastery</code> in game for more info</li>
+              </ul>
+            </div>
+            <div class="media-stack">
+              <div class="media">
+                <img src="assets/int+rod.png" alt="INT Rod with materia" loading="lazy" decoding="async" />
+              </div>
+              <div class="media">
+                <img src="assets/Hauby+materia.png" alt="Haubergeon with materia" loading="lazy" decoding="async" />
+              </div>
+              <div class="media">
+                <img src="assets/ffxi+materia.png" alt="Materia UI" loading="lazy" decoding="async" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="stripe" id="exp">
+        <div class="container">
+          <div class="split-reverse">
+            <div class="info-dump">
+              <h2>EXP Adjustments</h2>
+              <p>Leveling is faster and supports mixed-level groups.</p>
+              <ul>
+                <li>You can sync to any level, great for helping new players out!</li>
+                <li>Chain timers increased for EM+ fights</li>
+                <li>Multiple camps have been reworked for density and respawn rates</li>
+              </ul>
+            </div>
+            <div class="media-stack">
+              <div class="media level-up-media" style="margin-inline: auto">
+                <img
+                  class="level-up-img"
+                  src="assets/level up.png"
+                  alt="Level up icon"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="stripe" id="slimes">
+        <div class="container">
+          <div class="split">
+            <div class="info-dump">
+              <h2>Slimes &amp; Shiny System</h2>
+              <p>When a group defeats certain enemies that are higher level than every member:</p>
+              <ul>
+                <li>5% chance the mob respawns as a Slime/Shiny</li>
+                <li>Rewards bonus EXP and/or gil, and a chance at cosmetic items</li>
+                <li>Slimes can pop across many zones as leveling incentives</li>
+                <li>Starter zones include Level-1 Slimes granting gil for brand-new players</li>
+              </ul>
+            </div>
+            <div class="media-stack">
+              <div class="media">
+                <img src="assets/shiny+merit.png" alt="Shiny merit example" loading="lazy" decoding="async" />
+              </div>
+              <div class="media">
+                <img src="assets/SLIME.png" alt="Slime example" loading="lazy" decoding="async" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="stripe" id="travel">
+        <div class="container">
+          <div class="split-reverse">
+            <div class="info-dump">
+              <h2>Travel &amp; Outposts</h2>
+              <ul>
+                <li>Outpost warps can be used by any nation regardless of ownership</li>
+                <li>Explorer Moogles enable city-to-city fast travel for small item trades</li>
+                <li>Major travel NPCs offer direct warps to BCNMs, Avatar fights, Sky, Sea, ZNMs, and more</li>
+              </ul>
+            </div>
+            <div class="media-stack">
+              <div class="media">
+                <img src="assets/Moogle3.PNG" alt="Explorer Moogle" loading="lazy" decoding="async" />
+              </div>
+              <div class="media">
+                <img src="assets/moogle+dialouge.PNG" alt="Moogle dialogue" loading="lazy" decoding="async" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="stripe" id="dynamis">
+        <div class="container">
+          <div class="split">
+            <div class="info-dump">
+              <h2>Dynamis (Customized)</h2>
+              <p>Dynamis has been modernized while keeping the core encounter structure.</p>
+              <ul>
+                <li>Personal currency for every participant</li>
+                <li>Hundos can still drop into loot pool</li>
+                <li>Drop rates greatly increased compared to retail</li>
+                <li>Tier 2 Materia currency available in Dynamis</li>
+                <li>Currency conversion NPCs available</li>
+                <li><strong>Lockout:</strong> 6 days</li>
+              </ul>
+            </div>
+            <div class="media-stack">
+              <div class="media">
+                <img src="assets/currency.png" alt="Dynamis currency" loading="lazy" decoding="async" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="stripe" id="hnm">
+        <div class="container">
+          <div class="split-reverse">
+            <div class="info-dump">
+              <h2>HNMs &amp; Tier System</h2>
+              <ul>
+                <li>T1–T4 progression; keys crafted or earned through defeating HNMs</li>
+                <li>HNMs are able to be popped at a higher level for more rewards</li>
+                <li>Increasing difficulty increases key drop rates and HNM currency earned</li>
+                <li>HNM abilities and stats updated/retail-fixed</li>
+                <li>High-tier fights feature new mechanics and sleep resistance</li>
+                <li>No claim wars or 24-hour windows — all HNMs are force pop and fought on your schedule</li>
+              </ul>
+            </div>
+            <div class="media-stack">
+              <div class="media">
+                <img src="assets/king behemoth.jpg" alt="King Behemoth" loading="lazy" decoding="async" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="stripe" id="hnm-currency">
+        <div class="container">
+          <div class="split">
+            <div class="info-dump">
+              <h2>HNM Currency</h2>
+              <p>
+                Each tier awards a custom currency. After a kill, players earn currency for that tier based on
+                difficulty:
+              </p>
+              <ul>
+                <li>Difficulty 1 → +1</li>
+                <li>Difficulty 2 → +2</li>
+                <li>Difficulty 3 → +3</li>
+                <li>Difficulty 4 → +4</li>
+              </ul>
+            </div>
+            <div class="media-stack">
+              <div class="media">
+                <img src="assets/hnm+currency.png" alt="HNM currency" loading="lazy" decoding="async" />
+              </div>
+              <div class="media">
+                <img src="assets/simurg+pic.png" alt="HNM shop" loading="lazy" decoding="async" />
+              </div>
+              <div class="media">
+                <img src="assets/buying+trotter+boots.png" alt="Buying from HNM shop" loading="lazy" decoding="async" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="stripe" id="limit-break">
+        <div class="container">
+          <div class="split-reverse">
+            <div class="info-dump">
+              <h2>Limit Break Timeline</h2>
+              <ul>
+                <li>[LB1] Start at level 45</li>
+                <li>[LB2] Start at level 50 (if LB1 completed)</li>
+                <li>[LB3] Start at level 60 (if LB2 completed)</li>
+                <li>[LB4] Start at level 60 (if LB3 completed)</li>
+                <li>[LB5] Start at level 60 (if LB4 completed)</li>
+              </ul>
+            </div>
+            <div class="media-stack">
+              <div class="media maat-media">
+                <img src="assets/maat.jpg" alt="Maat" loading="lazy" decoding="async" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="stripe" id="crafting">
+        <div class="container">
+          <div class="split">
+            <div class="info-dump">
+              <h2>Crafting: Tier 1 HNM Key Synths</h2>
+              <p>Each T1 key is a level 70 craft requiring all eight geodes plus one crystal based on the craft:</p>
+              <ul>
+                <li>Cooking — Dark</li>
+                <li>Leathercraft — Lightning</li>
+                <li>Clothcraft — Earth</li>
+                <li>Bonecraft — Water</li>
+                <li>Smithing — Ice</li>
+                <li>Goldsmithing — Fire</li>
+                <li>Alchemy — Light</li>
+                <li>Woodworking — Wind</li>
+              </ul>
+            </div>
+            <div class="media-stack"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="stripe" id="empyrean">
+        <div class="container">
+          <div class="split-reverse">
+            <div class="info-dump">
+              <h2>Empyrean Weapons</h2>
+              <p>
+                A relic beyond a relic. Empyreans are obtainable and will be
+                <strong>level 75</strong> weapons.
+              </p>
+            </div>
+            <div class="media-stack">
+              <div class="media">
+                <img src="assets/image-asset.png" alt="Empyrean weapon (image asset)" loading="lazy" decoding="async" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="stripe" id="merits">
+        <div class="container">
+          <div class="split">
+            <div class="info-dump">
+              <h2>Merits</h2>
+              <p>Group 1 & 2 merits are unlocked and the the limits of merit categories have been increased.</p>
+            </div>
+            <div class="media-stack">
+              <div class="media" style="margin-inline: auto">
+                <img src="assets/Merit+changes.png" alt="Merit changes overview" loading="lazy" decoding="async" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div>
+        <p>© 2025 Eventide XI • All trademarks are property of their respective owners.</p>
+      </div>
+    </footer>
+  </body>
+</html>
