@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://eventide-xi.com/sitemap.xml
