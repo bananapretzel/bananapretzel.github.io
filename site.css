@@ -130,6 +130,8 @@ a {
   text-decoration: none;
 }
 
+
+
 a:hover {
   text-decoration: underline;
 }
@@ -137,7 +139,7 @@ a:hover {
 h1,
 h2,
 h3 {
-  line-height: 1.2;
+  line-height: 1.3;
   margin: 0 0 0.5rem;
   text-align: center;
   font-family: "Oswald";
@@ -158,10 +160,6 @@ ul {
 
 li {
   margin: 0.3rem 0;
-}
-
-.muted {
-  color: var(--muted);
 }
 
 header img {
@@ -210,7 +208,7 @@ header img {
 }
 
 .media {
-  border-radius: 14px;
+  border-radius: 16px;
   overflow: hidden;
 
   background: #fff;
@@ -228,7 +226,6 @@ header img {
 .media-stack {
   display: flex;
   flex-direction: column;
-  gap: 12px;
   justify-content: flex-start;
   align-items: center;
   flex: 1;
@@ -315,8 +312,7 @@ header::after {
 }
 
 /* Place logo (left content) and menu (right content) */
-.nav > img,
-.nav > .brand {
+.nav > img {
   grid-column: 2;
   justify-self: start;
 }
@@ -341,20 +337,23 @@ header::after {
   display: none;
 }
 
+/* Support nav lists (<ul><li><a>) inside .menu while keeping old direct-anchor markup working.
+   Using display: contents preserves semantics but lets anchors behave as flex items. */
+.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.menu > ul,
+.menu > ul > li {
+  display: contents;
+}
+
 nav a {
   font-weight: 300;
   font-size: 22px;
   letter-spacing: 1px;
   font-family: "Oswald";
-}
-
-.brand {
-  font-weight: 700;
-  letter-spacing: 0.3px;
-  font-size: 1.15rem;
-  color: var(--text);
-  text-decoration: none;
-  text-align: left;
 }
 
 .menu a {
@@ -465,6 +464,17 @@ nav a {
   font-size: 24px;
 }
 
+/* Custom Changes title: apply brand-like green→teal gradient to the H1 */
+body[data-page="custom-changes"] .custom-changes-title h1 {
+  /* Gradient tuned to match the Eventide XI wordmark */
+  background: linear-gradient(90deg, #2aa574 0%, #58cdbb 50%, #8ff1e6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent; /* fallback */
+  text-shadow: none; /* keep gradient clean over blurred container */
+}
+
 /* EXP section: make 'level up' image smaller and remove white card behind it */
 .level-up-media {
   background: transparent !important;
@@ -478,6 +488,10 @@ nav a {
   margin-inline: auto;
   /* Try to visually drop white background into the container background */
   mix-blend-mode: darken; /* makes pure white blend to background on light containers */
+}
+
+.info-dump h2 {
+  margin-bottom: 10px;
 }
 
 /* Override the generic .media img { width:100% } for the level-up image */
@@ -512,12 +526,6 @@ nav a {
 
 .btn:hover {
   transform: translateY(-1px);
-}
-
-.btn.secondary {
-  background: transparent;
-  color: var(--text);
-  border-color: rgba(0, 0, 0, 0.18);
 }
 
 /* Footer */
@@ -567,9 +575,25 @@ body[data-page="custom-changes"] .media.maat-media {
 }
 body[data-page="custom-changes"] .media.maat-media img {
   display: block;
-  width: 150px;
+  width: 150px; /* match standard width for page images */
   height: auto;
   margin-inline: auto;
+}
+
+/* Custom Changes: unify media widths while preserving aspect ratio */
+body[data-page="custom-changes"] .media {
+  width: 75%;       /* match the width of the media column */
+  max-width: none;   /* remove global 560px cap so it can fill the column */
+}
+body[data-page="custom-changes"] .media img {
+  width: 100%;
+  height: auto;
+}
+/* Override level-up image special sizing so it follows the page width */
+body[data-page="custom-changes"] .media.level-up-media img.level-up-img {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
 }
 
 /* Responsive: handled at 1350px breakpoint above */
@@ -587,7 +611,7 @@ body[data-page="custom-changes"] .media.maat-media img {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background-image: url("assets/blue slime.png");
+  background-image: url("assets/blue-slime.png");
   background-repeat: no-repeat;
   /* raise the slime 50px above exact vertical center */
   background-position: center calc(50% - 50px);
@@ -613,4 +637,11 @@ body[data-page="custom-changes"] .media.maat-media img {
   width: 100%;
   height: 100%;
   border: 0;
+}
+
+.more-details {
+  margin-top: 50px;
+  font-family: 'Oswald';
+  font-size: 36px;
+  text-align: center;
 }
