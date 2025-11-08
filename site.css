@@ -16,6 +16,7 @@
   font-style: normal;
   font-display: swap;
 }
+
 /* 300 */
 @font-face {
   font-family: "Oswald";
@@ -24,6 +25,7 @@
   font-style: normal;
   font-display: swap;
 }
+
 /* 400 */
 @font-face {
   font-family: "Oswald";
@@ -32,6 +34,7 @@
   font-style: normal;
   font-display: swap;
 }
+
 /* 500 */
 @font-face {
   font-family: "Oswald";
@@ -40,6 +43,7 @@
   font-style: normal;
   font-display: swap;
 }
+
 /* 600 */
 @font-face {
   font-family: "Oswald";
@@ -48,6 +52,7 @@
   font-style: normal;
   font-display: swap;
 }
+
 /* 700 */
 @font-face {
   font-family: "Oswald";
@@ -65,6 +70,7 @@
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: "Cinzel Decorative";
   src: url("assets/fonts/CinzelDecorative-Bold.ttf") format("truetype");
@@ -72,6 +78,7 @@
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: "Cinzel Decorative";
   src: url("assets/fonts/CinzelDecorative-Black.ttf") format("truetype");
@@ -84,15 +91,23 @@
   /* Light theme (white with subtle ambient tints) */
   --bg: #ffffff;
   --surface: #ffffff;
-  --text: #000000; /* deep slate */
-  --muted: #5b6475; /* slate-ish */
-  --accent: #2563eb; /* richer blue for light theme */
-  --accent-2: #10b981; /* mint/emerald */
-  --accent-3: #8b5cf6; /* soft purple underline */
-  --gold: #c084fc; /* soft gold/purple accent */
-  --header-height: 110px; /* used to offset fixed header */
+  --text: #000000;
+  /* deep slate */
+  --muted: #5b6475; /* muted text color */
+  /* slate-ish */
+  --accent: #2563eb;
+  /* richer blue for light theme */
+  --accent-2: #10b981;
+  /* mint/emerald */
+  --accent-3: #8b5cf6;
+  /* soft purple underline */
+  --gold: #c084fc;
+  /* soft gold/purple accent */
+  --header-height: 110px;
+  /* used to offset fixed header */
   /* header layout */
-  --cluster-gap: 300px; /* fixed space between logo and menu (increased by 100px) */
+  --cluster-gap: 300px;
+  /* fixed space between logo and menu (increased by 100px) */
   /* home hero backdrop */
   --home-hero-backdrop-opacity: 0.18;
 }
@@ -108,20 +123,24 @@ body {
   display: flex;
   flex-direction: column;
 }
+
 /* Reserve space for scrollbar so width doesn't jump between pages */
 html {
   /* Reserve gutter on the scrollbar side only (avoid a gap on the left) */
-  scrollbar-gutter: stable;
+  overflow-y: scroll;
 }
+
 body {
   font-family: Manrope, Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial,
     "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   color: var(--text);
   background: url("assets/backgroundtest2.png") center center / cover no-repeat;
-  background-attachment: fixed; /* Ensures the background stays fixed during scrolling */
+  background-attachment: fixed;
+  /* Ensures the background stays fixed during scrolling */
   line-height: 1.5;
   font-size: 16px;
-  padding-top: 0; /* header is no longer fixed; no offset needed */
+  padding-top: 0;
+  /* header is no longer fixed; no offset needed */
 }
 
 /* Typography & links */
@@ -137,6 +156,8 @@ section {
 a:hover {
   text-decoration: underline;
 }
+
+
 
 h1,
 h2,
@@ -184,9 +205,10 @@ header img {
   margin: 0 auto;
   background: rgba(255, 255, 255, 0);
   border-radius: 16px;
-  backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
-  text-shadow: 0 0 3px rgba(255, 255, 255, 0.8); /* Add white outline to text */
+  backdrop-filter: blur(5px);
+  text-shadow: 0 0 3px rgba(255, 255, 255, 0.8);
+  /* Add white outline to text */
 }
 
 /* When container is used for the header (.container.nav), make it full-width and neutral */
@@ -197,7 +219,6 @@ header img {
   border: 0;
   border-radius: 0;
   backdrop-filter: none;
-  -webkit-backdrop-filter: none;
   text-shadow: none;
 }
 
@@ -245,10 +266,12 @@ header img {
 }
 
 @media (max-width: 1350px) {
+
   .split,
   .split-reverse {
     flex-direction: column;
   }
+
   /* Keep content comfortable on phones/tablets */
   .container {
     width: 92vw;
@@ -270,18 +293,19 @@ header img {
 }
 
 @media (min-width: 901px) {
-  .split-reverse > :first-child {
+  .split-reverse> :first-child {
     grid-column: 2;
   }
 
-  .split-reverse > :last-child {
+  .split-reverse> :last-child {
     grid-column: 1;
   }
 }
 
 /* Header */
 header {
-  position: relative; /* participate in normal document flow (not fixed to viewport) */
+  position: relative;
+  /* participate in normal document flow (not fixed to viewport) */
   z-index: 10;
   background-color: #0f172a;
 
@@ -298,7 +322,8 @@ header::after {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: -25px; /* align to the inner edge above the border line */
+  bottom: -25px;
+  /* align to the inner edge above the border line */
   height: var(--header-vine-height);
   pointer-events: none;
   /* use vine4 if available; fallback to vine5 */
@@ -306,25 +331,29 @@ header::after {
   background-repeat: repeat-x;
   background-position: bottom center;
   background-size: auto var(--header-vine-height);
-  z-index: 0; /* stays behind header content */
+  z-index: 0;
+  /* stays behind header content */
 }
 
 /* Grid with flexible outer gutters and fixed inner gap */
 .nav {
   display: grid;
-  grid-template-columns: 1fr max-content var(--cluster-gap) max-content 1fr; /* L gutter | logo | fixed gap | menu | R gutter */
+  grid-template-columns: 1fr max-content var(--cluster-gap) max-content 1fr;
+  /* L gutter | logo | fixed gap | menu | R gutter */
   align-items: center;
-  padding: 12px 0; /* vertical padding only; gutters via grid columns */
+  padding: 12px 0;
+  /* vertical padding only; gutters via grid columns */
   min-width: 0;
   box-shadow: 0 2px 16px #00000026;
 }
 
 /* Place logo (left content) and menu (right content) */
-.nav > img {
+.nav>img {
   grid-column: 2;
   justify-self: start;
 }
-.nav > .menu {
+
+.nav>.menu {
   grid-column: 4;
   justify-self: end;
 }
@@ -335,15 +364,14 @@ header::after {
   flex-wrap: nowrap;
   gap: 22px;
   white-space: nowrap;
-  min-width: max-content; /* prevents grid from squeezing the menu */
+  min-width: max-content;
+  /* prevents grid from squeezing the menu */
   max-width: 100%;
-  overflow-x: auto; /* scroll if it gets tight rather than collapsing the gap */
-  -webkit-overflow-scrolling: touch;
+  overflow-x: auto;
+  /* scroll if it gets tight rather than collapsing the gap */
   scrollbar-width: none;
 }
-.menu::-webkit-scrollbar {
-  display: none;
-}
+
 
 /* Support nav lists (<ul><li><a>) inside .menu while keeping old direct-anchor markup working.
    Using display: contents preserves semantics but lets anchors behave as flex items. */
@@ -352,8 +380,9 @@ header::after {
   margin: 0;
   padding: 0;
 }
-.menu > ul,
-.menu > ul > li {
+
+.menu>ul,
+.menu>ul>li {
   display: contents;
 }
 
@@ -371,7 +400,8 @@ nav a {
   text-decoration: none;
   position: relative;
   padding: 2px 0;
-  margin: 0 12px; /* Add horizontal spacing between links */
+  margin: 0 12px;
+  /* Add horizontal spacing between links */
 }
 
 .menu a:hover {
@@ -438,7 +468,7 @@ nav a {
 }
 
 .hero h2 {
-  padding-top: 15px;
+  padding-top: 5px;
 }
 
 /* Hero logo image inside the main heading */
@@ -446,7 +476,7 @@ nav a {
   display: block;
   height: auto;
   max-width: 700px;
-  margin: 8px auto 0;
+  margin: 8px auto 8px;
 }
 
 /* Add a white outline to all hero text for extra contrast over the backdrop.
@@ -460,10 +490,13 @@ nav a {
 .intro-text {
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Center text vertically */
-  align-items: center; /* Center text horizontally */
-  text-align: center; /* Ensure text alignment is centered */
-  margin-top: 24px;
+  justify-content: center;
+  /* Center text vertically */
+  align-items: center;
+  /* Center text horizontally */
+  text-align: center;
+  /* Ensure text alignment is centered */
+
 }
 
 .custom-changes-title {
@@ -472,19 +505,21 @@ nav a {
   font-size: 24px;
 }
 
-/* Custom Changes title: apply brand-like green→teal gradient to the H1 */
 .h1-gradient-title {
   /* Gradient tuned to match the Eventide XI wordmark */
   font-size: 50px;
   margin-top: 50px;
   margin-bottom: 50px;
-  background: linear-gradient(168deg, rgba(57, 145, 105, 1) 40%, rgba(118, 235, 225, 1) 60%);
-  -webkit-background-clip: text;
+  background: linear-gradient(168deg, rgb(57, 145, 105) 40%, rgb(118, 235, 225) 60%);
   background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
   -webkit-text-fill-color: transparent;
-  color: transparent; /* fallback */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* subtle shadow for readability */
-  
+  /* fallback */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  /* subtle shadow for readability */
+
+}
 }
 
 /* EXP section: make 'level up' image smaller and remove white card behind it */
@@ -499,7 +534,8 @@ nav a {
   height: auto;
   margin-inline: auto;
   /* Try to visually drop white background into the container background */
-  mix-blend-mode: darken; /* makes pure white blend to background on light containers */
+  mix-blend-mode: darken;
+  /* makes pure white blend to background on light containers */
 }
 
 .info-dump h2 {
@@ -542,9 +578,12 @@ nav a {
 
 /* Footer */
 footer {
-  margin-top: auto; /* Push the footer to the bottom */
-  border-top: 2px solid #00000026; /* Subtle border */
-  background-color: #0f172a; /* Solid deep slate color */
+  margin-top: auto;
+  /* Push the footer to the bottom */
+  border-top: 2px solid #00000026;
+  /* Subtle border */
+  background-color: #0f172a;
+  /* Solid deep slate color */
   padding: 10px;
   text-align: center;
   position: relative;
@@ -567,41 +606,52 @@ main {
 body[data-page="custom-changes"] main h2 {
   text-align: center;
 }
+
 body[data-page="custom-changes"] main ul,
 body[data-page="custom-changes"] main ol {
   padding-left: 2rem;
 }
+
 @media (min-width: 901px) {
+
   body[data-page="custom-changes"] main .split,
   body[data-page="custom-changes"] main .split-reverse {
     align-items: stretch;
   }
+
   body[data-page="custom-changes"] main .media-stack {
     justify-content: center;
   }
 }
+
 /* Maat image: smaller and no shadow (scoped to page) */
 body[data-page="custom-changes"] .media.maat-media {
   box-shadow: none !important;
   background: transparent;
   border: 0;
 }
+
 body[data-page="custom-changes"] .media.maat-media img {
   display: block;
-  width: 150px; /* match standard width for page images */
+  width: 150px;
+  /* match standard width for page images */
   height: auto;
   margin-inline: auto;
 }
 
 /* Custom Changes: unify media widths while preserving aspect ratio */
 body[data-page="custom-changes"] .media {
-  width: 75%;       /* match the width of the media column */
-  max-width: none;   /* remove global 560px cap so it can fill the column */
+  width: 75%;
+  /* match the width of the media column */
+  max-width: none;
+  /* remove global 560px cap so it can fill the column */
 }
+
 body[data-page="custom-changes"] .media img {
   width: 100%;
   height: auto;
 }
+
 /* Override level-up image special sizing so it follows the page width */
 body[data-page="custom-changes"] .media.level-up-media img.level-up-img {
   width: 100% !important;
@@ -615,10 +665,13 @@ body[data-page="custom-changes"] .media.level-up-media img.level-up-img {
 .home-hero {
   position: relative;
 }
+
 .home-hero .container {
   position: relative;
-  isolation: isolate; /* ensure backdrop stays behind content */
+  isolation: isolate;
+  /* ensure backdrop stays behind content */
 }
+
 .home-hero .container::before {
   content: "";
   position: absolute;
@@ -632,7 +685,8 @@ body[data-page="custom-changes"] .media.level-up-media img.level-up-img {
   opacity: 0.04;
   z-index: 0;
 }
-.home-hero .container > * {
+
+.home-hero .container>* {
   position: relative;
   z-index: 1;
 }
@@ -640,11 +694,15 @@ body[data-page="custom-changes"] .media.level-up-media img.level-up-img {
 .video {
   position: relative;
   width: 100%;
-  max-width: 800px; /* optional */
-  margin: 0 auto; /* optional */
-  aspect-ratio: 16 / 9; /* keeps it responsive */
+  max-width: 800px;
+  /* optional */
+  margin: 0 auto;
+  /* optional */
+  aspect-ratio: 16 / 9;
+  /* keeps it responsive */
 }
-.video > iframe {
+
+.video>iframe {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -657,4 +715,32 @@ body[data-page="custom-changes"] .media.level-up-media img.level-up-img {
   font-family: 'Oswald';
   font-size: 36px;
   text-align: center;
+}
+
+.button {
+  display: block;
+  margin: 50px auto 40px auto;
+  font-family: 'Cinzel Decorative';
+  font-weight: 700;
+  font-size: 24px;
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.9);
+  background: linear-gradient(160deg, #399169 44%, #76ebff 100%);
+  border: 0px solid transparent;
+  border-radius: 15px;
+  padding: 10px 35px;
+  outline: 2px solid #96ffce;
+  outline-offset: 0;
+  cursor: pointer;
+
+}
+
+.button:hover {
+  background: linear-gradient(160deg, #245b43 44%, #00b3d2 100%);
+}
+
+.button:active {
+  outline-width: 5px;
+  transition: none;
+  transform: translate(1px, 1px);
 }
