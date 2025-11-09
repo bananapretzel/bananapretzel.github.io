@@ -29,8 +29,10 @@
   <meta name="twitter:title" content="Eventide XI — A FFXI Private Server">
   <link rel="icon" type="image/png" href="/assets/favicon.png">
   <link rel="apple-touch-icon" href="/assets/favicon.png">
+  <link rel="preload" as="image" href="assets/backgroundtest2.png" fetchpriority="high">
   <link rel="stylesheet" href="site.css">
   <script src="/assets/js/play.js" defer></script>
+  <script src="/assets/js/burger-menu.js" type="module" defer></script>
 </head>
 
 <body>
@@ -38,15 +40,23 @@
   <header>
     <div class="nav">
       <img src="assets/blue-slime.png" alt="Blue slime" loading="eager" fetchpriority="high">
-      <nav class="menu" aria-label="Main">
-        <ul>
-          <li><a href="index.html" aria-current="page">Home</a></li>
-          <li><a href="custom-changes.html">Custom Changes</a></li>
-          <li><a href="install.html">Install</a></li>
-          <li><a href="patch-notes.html">Patch Notes</a></li>
-          <li><a href="https://discord.gg/mWQnQ2Hdab" target="_blank" rel="noopener noreferrer">Discord</a></li>
-        </ul>
-      </nav>
+
+      <div class="burger-menu">
+        <button class="burger-menu__trigger" aria-controls="main-menu" aria-expanded="false" aria-label="Open menu">
+          <span class="burger-menu__bar"></span>
+        </button>
+        <div class="burger-menu__panel">
+          <nav class="menu" id="main-menu" aria-label="Main">
+            <ul>
+              <li><a href="index.html" aria-current="page">Home</a></li>
+              <li><a href="custom-changes.html">Custom Changes</a></li>
+              <li><a href="install.html">Install</a></li>
+              <li><a href="patch-notes.html">Patch Notes</a></li>
+              <li><a href="https://discord.gg/mWQnQ2Hdab" target="_blank" rel="noopener noreferrer">Discord</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -67,7 +77,8 @@
         <!-- Tagline becomes the next level heading -->
         <h2 class="tagline">A highly custom ToAU server</h2>
 
-        <button class="button" id="playNow" type="button" data-url="https://github.com/EventideXITest/EventideLauncher/releases/download/v0.3.1/EventideLauncher-win-Setup.exe">
+        <button class="button" id="playNow" type="button"
+          data-url="https://github.com/EventideXITest/EventideLauncher/releases/download/v0.3.1/EventideLauncher-win-Setup.exe">
           plAy nOW
         </button>
 

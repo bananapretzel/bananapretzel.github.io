@@ -6,8 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>404 | Eventide XI</title>
   <meta name="title" content="Eventide XI - Final Fantasy XI Private Server">
-  <meta name="description"
-    content="Eventide XI is a highly custom 75-cap FFXI private server that provides endless amounts of fun and new ideas to enhance your FFXI experience. Join today and rediscover the magic of FFXI like never before!">
+  <meta name="description" content="An unexpected error has occurred.">
   <meta name="keywords"
     content="Final Fantasy XI, FFXI private server, FFXI 75 cap, FFXI classic, FFXI custom server, FFXI era server, FFXI MMO, Final Fantasy 11">
   <meta name="creator" content="The Eventide Community">
@@ -29,9 +28,31 @@
   <link rel="icon" type="image/png" href="/assets/favicon.png">
   <link rel="apple-touch-icon" href="/assets/favicon.png">
   <link rel="stylesheet" href="site.css">
+  <link rel="preload" as="image" href="assets/backgroundtest2.png" fetchpriority="high">
 </head>
 
 <body>
+  <header>
+    <div class="nav">
+      <img src="assets/blue-slime.png" alt="Blue slime" loading="eager" fetchpriority="high" />
+      <div class="burger-menu">
+        <button class="burger-menu__trigger" aria-controls="main-menu" aria-expanded="false" aria-label="Open menu">
+          <span class="burger-menu__bar"></span>
+        </button>
+        <div class="burger-menu__panel">
+          <nav class="menu" id="main-menu" aria-label="Main">
+            <ul>
+              <li><a href="index.html" aria-current="page">Home</a></li>
+              <li><a href="custom-changes.html">Custom Changes</a></li>
+              <li><a href="install.html">Install</a></li>
+              <li><a href="patch-notes.html">Patch Notes</a></li>
+              <li><a href="https://discord.gg/mWQnQ2Hdab" target="_blank" rel="noopener noreferrer">Discord</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
   <div class="card">
     <h1>404 — Not Found</h1>
     <p>That page isn’t here. Head back to the <a href="index.html">home page</a>.</p>
@@ -39,12 +60,13 @@
   </div>
   <footer>
     <p><small>FINAL FANTASY XI content ©<time>2002</time>-<time>2025</time> SQUARE ENIX CO., LTD. FINAL FANTASY® is a
-          registered trademark of SQUARE ENIX CO., LTD.<br> Eventide XI is a fan-made, non-commercial project
-          unaffiliated
-          with SQUARE ENIX. No ownership claimed over FFXI content. Site assets © respective owners. All rights
-          reserved.</small>
-        </p>
+        registered trademark of SQUARE ENIX CO., LTD.<br> Eventide XI is a fan-made, non-commercial project
+        unaffiliated
+        with SQUARE ENIX. No ownership claimed over FFXI content. Site assets © respective owners. All rights
+        reserved.</small>
+    </p>
   </footer>
+  <script src="/assets/js/burger-menu.js" type="module" defer></script>
 </body>
 
 </html>
