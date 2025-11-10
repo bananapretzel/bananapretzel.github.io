@@ -1,0 +1,123 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const title = "Eventide XI";
+const description =
+  "Eventide XI is a highly custom 75-cap FFXI private server that provides endless amounts of fun and new ideas to enhance your FFXI experience. Join today and rediscover the magic of FFXI like never before!";
+---
+
+<BaseLayout {title} {description}>
+  <script
+    slot="head"
+    type="application/ld+json"
+    set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://eventide-xi.com/#org",
+          name: "Eventide XI",
+          url: "https://eventide-xi.com/",
+          logo: "https://eventide-xi.com/assets/eventideXI.png",
+          sameAs: ["https://discord.gg/G8JAcccH"],
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://eventide-xi.com/#site",
+          url: "https://eventide-xi.com/",
+          name: "Eventide XI",
+          publisher: { "@id": "https://eventide-xi.com/#org" },
+        },
+        {
+          "@type": "VideoGame",
+          "@id": "https://eventide-xi.com/#game",
+          name: "Eventide XI",
+          url: "https://eventide-xi.com/",
+          description: description,
+          genre: "MMORPG",
+          gamePlatform: "PC",
+          publisher: { "@id": "https://eventide-xi.com/#org" },
+          image: "https://eventide-xi.com/assets/card-logo.png",
+          screenshot: "https://eventide-xi.com/assets/card-logo.png",
+          inLanguage: "en",
+          sameAs: ["https://discord.gg/G8JAcccH"],
+        },
+      ],
+    })}
+  />
+
+  <main id="main-content">
+    <section class="hero home-hero" aria-labelledby="site-title">
+      <div class="container">
+        <h1 id="site-title">Welcome to</h1>
+
+        <figure class="hero-brand">
+          <img
+            src="/assets/eventideXI.png"
+            alt="Eventide XI logo"
+            class="hero-logo"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+          />
+        </figure>
+
+        <h2 class="tagline">A highly custom ToAU server</h2>
+
+        <button
+          class="button"
+          id="playNow"
+          type="button"
+          data-url="https://github.com/EventideXITest/EventideLauncher/releases/download/v0.3.1/EventideLauncher-win-Setup.exe"
+        >
+          plAy nOW
+        </button>
+
+        <div class="intro-text">
+          <p>
+            <strong>Eventide XI</strong> keeps the challenge, depth, and excitement
+            of FFXI, but removes the worst parts: toxic claim wars, endless camping,
+            and days of grinding with nothing to show for it. We respect your time
+            while preserving the feeling of achievement that makes FFXI unforgettable.
+          </p>
+
+          <p>
+            To accomplish that, we’ve reworked core systems to remove
+            frustration, not difficulty:
+          </p>
+
+          <ul>
+            <li>
+              <strong>Guaranteed loot systems</strong> — earn rewards through gameplay,
+              not luck
+            </li>
+            <li><strong>Force-pop HNMs</strong> — no more claim drama</li>
+            <li>
+              <strong>Improved EXP and party systems</strong> for faster, smoother
+              progression
+            </li>
+            <li>
+              <strong>Harder fights</strong> — more mechanics, more teamwork, more
+              fun
+            </li>
+            <li>
+              <strong>New mechanics and power options</strong> to expand player choice
+            </li>
+            <li>
+              <strong>Less travel time</strong> — spend more time playing, not running
+            </li>
+            <li>
+              <strong>And many more!</strong> — check the Custom Changes page
+            </li>
+          </ul>
+
+          <p>
+            If you love FFXI but want a version that fits your life—without
+            sacrificing challenge or community—Eventide XI is the experience
+            you’ve been waiting for.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

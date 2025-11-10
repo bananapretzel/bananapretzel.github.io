@@ -49,7 +49,7 @@ class SimpleBurgerMenu {
 
     openMenu() {
         this.isOpen = true;
-        this.previouslyFocused = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+        this.previouslyFocused = (document.activeElement && typeof document.activeElement.focus === 'function') ? document.activeElement : null;
         this.updateAttributes();
 
         // Focus the first focusable element inside the panel for accessibility

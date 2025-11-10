@@ -1,0 +1,146 @@
+---
+const {
+  title = "Eventide XI - Final Fantasy XI Private Server",
+  description = "Eventide XI is a highly custom 75-cap FFXI private server.",
+} = Astro.props;
+const url = Astro.url;
+---
+
+<!doctype html>
+<html lang="en-NZ">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#76ebe2" />
+    <link rel="icon" type="image/png" href="/assets/favicon.png" />
+    <link rel="apple-touch-icon" href="/assets/favicon.png" />
+    <link rel="stylesheet" href="/site.css" />
+    <link rel="canonical" href={`https://eventide-xi.com${url.pathname}`} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta
+      property="og:image"
+      content="https://eventide-xi.com/assets/card-logo.png"
+    />
+    <meta
+      property="og:url"
+      content={`https://eventide-xi.com${url.pathname}`}
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Eventide XI" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta
+      name="twitter:image"
+      content="https://eventide-xi.com/assets/card-logo.png"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="/assets/backgroundtest2.png"
+      fetchpriority="high"
+    />
+    <slot name="head" />
+    <style>
+      .skip-nav {
+        position: absolute;
+        left: -10000px;
+        top: auto;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+      }
+      .skip-nav:focus {
+        position: static;
+        width: auto;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="#main-content" class="skip-nav">Skip to content</a>
+    <header>
+      <div class="nav">
+        <a href="/" class="nav-logo-link" aria-label="Home">
+          <img
+            src="/assets/blue-slime.png"
+            alt="Blue slime"
+            loading="eager"
+            fetchpriority="high"
+          />
+        </a>
+        <div class="burger-menu">
+          <button
+            class="burger-menu__trigger"
+            aria-controls="main-menu"
+            aria-expanded="false"
+            aria-label="Open menu"
+          >
+            <span class="burger-menu__bar"></span>
+          </button>
+          <div class="burger-menu__panel">
+            <nav class="menu" id="main-menu" aria-label="Main">
+              <ul>
+                <li>
+                  <a
+                    href="/"
+                    aria-current={url.pathname === "/" ? "page" : undefined}
+                    >Home</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="/custom-changes"
+                    aria-current={url.pathname.startsWith("/custom-changes")
+                      ? "page"
+                      : undefined}>Custom Changes</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="/install"
+                    aria-current={url.pathname.startsWith("/install")
+                      ? "page"
+                      : undefined}>Install</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="/patch-notes"
+                    aria-current={url.pathname.startsWith("/patch-notes")
+                      ? "page"
+                      : undefined}>Patch Notes</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://discord.gg/mWQnQ2Hdab"
+                    target="_blank"
+                    rel="noopener noreferrer">Discord</a
+                  >
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <slot />
+    <footer>
+      <p>
+        <small
+          >FINAL FANTASY XI content ©<time>2002</time>-<time>2025</time> SQUARE
+          ENIX CO., LTD. FINAL FANTASY® is a registered trademark of SQUARE ENIX
+          CO., LTD.<br />Eventide XI is a fan-made, non-commercial project
+          unaffiliated with SQUARE ENIX. No ownership claimed over FFXI content.
+          Site assets © respective owners. All rights reserved.</small
+        >
+      </p>
+    </footer>
+    <script src="/assets/js/burger-menu.js" type="module" defer></script>
+    <script src="/assets/js/play.js" defer></script>
+  </body>
+</html>

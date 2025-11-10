@@ -1,0 +1,51 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const title = "404: Not Found | Eventide XI";
+const description = "The page you were looking for could not be found.";
+---
+
+<BaseLayout {title} {description}>
+  <meta slot="head" name="robots" content="noindex,nofollow" />
+  <script
+    slot="head"
+    type="application/ld+json"
+    set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: "https://eventide-xi.com/",
+        },
+        { "@type": "ListItem", position: 2, name: "404" },
+      ],
+    })}
+  />
+
+  <div class="card">
+    <h1>404 — Not Found</h1>
+    <p>That page isn’t here. Head back to the <a href="/">home page</a>.</p>
+    <a class="btn" href="/">⟵ Back home</a>
+  </div>
+
+  <style>
+    .card {
+      text-align: center;
+      margin-top: 5rem;
+      margin-bottom: 5rem;
+    }
+
+    .card h1 {
+      font-size: 5rem;
+      margin-bottom: 1rem;
+    }
+
+    .card p {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+    }
+  </style>
+</BaseLayout>

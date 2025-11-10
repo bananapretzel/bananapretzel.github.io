@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Manrope";
-  src: url("assets/fonts/Manrope-Regular.woff2");
+  src: url("assets/fonts/Manrope-Regular.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -8,7 +8,7 @@
 
 @font-face {
   font-family: "Oswald";
-  src: url("assets/fonts/Oswald-ExtraLight.woff2") format("woff2");
+  src: url("assets/fonts/Oswald-ExtraLight.woff2");
   font-weight: 200;
   font-style: normal;
   font-display: swap;
@@ -56,7 +56,7 @@
 
 @font-face {
   font-family: "Cinzel Decorative";
-  src: url("assets/fonts/CinzelDecorative-Regular.ttf") format("truetype");
+  src: url("assets/fonts/CinzelDecorative-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -64,7 +64,7 @@
 
 @font-face {
   font-family: "Cinzel Decorative";
-  src: url("assets/fonts/CinzelDecorative-Bold.ttf") format("truetype");
+  src: url("assets/fonts/CinzelDecorative-Bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -72,7 +72,7 @@
 
 @font-face {
   font-family: "Cinzel Decorative";
-  src: url("assets/fonts/CinzelDecorative-Black.ttf") format("truetype");
+  src: url("assets/fonts/CinzelDecorative-Black.woff2") format("woff2");
   font-weight: 900;
   font-style: normal;
   font-display: swap;
@@ -278,9 +278,8 @@ header {
     padding: 12px 25px;
   }
 
-  .nav>img {
+  .nav>.nav-logo-link {
     grid-column: 1;
-    justify-self: start;
   }
 
   .nav>.burger-menu {
@@ -293,7 +292,7 @@ header {
   }
 }
 
-.nav>img {
+.nav>.nav-logo-link {
   grid-column: 2;
   justify-self: start;
 }
@@ -521,13 +520,13 @@ main .split, main .split-reverse {
   align-items: stretch;
 }
 
-body[data-page="custom-changes"] .media.maat-media {
+.media.maat-media {
   box-shadow: none !important;
-  background: transparent;
-  border: 0;
+  background: transparent !important;
+  border: 0 !important;
 }
 
-body[data-page="custom-changes"] .media.maat-media img {
+.media.maat-media img {
   display: block;
   width: 150px;
   height: auto;
