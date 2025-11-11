@@ -610,8 +610,8 @@ main .split, main .split-reverse {
 
 
 .button {
-  
-
+  display: block;
+  margin: 50px auto 40px;
   font-family: 'Cinzel Decorative';
   font-weight: 700;
   font-size: 24px;
