@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
 
 const title = "Eventide XI";
 const description =
@@ -52,9 +53,11 @@ const description =
         <h1 id="site-title">Welcome to</h1>
 
         <figure class="hero-brand">
-          <img
+          <Image
             src="/assets/eventideXI.png"
             alt="Eventide XI logo"
+            width = {700}
+            height = {120}
             class="hero-logo"
             loading="eager"
             fetchpriority="high"
@@ -62,7 +65,7 @@ const description =
           />
         </figure>
 
-        <h2 class="tagline">A highly custom ToAU server</h2>
+        <h2 class="tagline">A highly custom 75-cap server</h2>
 
         <button
           class="button"
@@ -82,7 +85,7 @@ const description =
           </p>
 
           <p>
-            To accomplish that, we’ve reworked core systems to remove
+            To accomplish that, we've reworked core systems to remove
             frustration, not difficulty:
           </p>
 
@@ -93,7 +96,7 @@ const description =
             </li>
             <li><strong>Force-pop HNMs</strong> — no more claim drama</li>
             <li>
-              <strong>Improved EXP and party systems</strong> for faster, smoother
+              <strong>Improved EXP and party systems</strong> — for faster, smoother
               progression
             </li>
             <li>
@@ -101,20 +104,20 @@ const description =
               fun
             </li>
             <li>
-              <strong>New mechanics and power options</strong> to expand player choice
+              <strong>New mechanics and power options</strong> — to expand player choice
             </li>
             <li>
               <strong>Less travel time</strong> — spend more time playing, not running
             </li>
             <li>
-              <strong>And many more!</strong> — check the Custom Changes page
+              <strong>And many more!</strong> — check the Custom Changes page for more info
             </li>
           </ul>
 
           <p>
-            If you love FFXI but want a version that fits your life—without
-            sacrificing challenge or community—Eventide XI is the experience
-            you’ve been waiting for.
+            If you love FFXI but want a version that fits your life without
+            sacrificing challenge or community, Eventide XI is the experience
+            you've been waiting for.
           </p>
         </div>
       </div>

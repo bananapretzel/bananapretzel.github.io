@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
 
 const title = "Custom Changes | Eventide XI";
 const description =
@@ -39,7 +40,7 @@ const description =
             <p>
               Every job has a set of Mastery tasks that unlock permanent
               bonuses, abilities, or mechanical upgrades. Mastery gives jobs
-              identity and progression without raising the level cap
+              identity and progression without raising the level cap.
             </p>
             <ul>
               <li>Five tiers of mastery</li>
@@ -63,17 +64,21 @@ const description =
           </article>
           <aside class="media-stack">
             <figure class="media">
-              <img
-                src="/assets/blm+mastery.png"
+              <Image
+                src={import.meta.env.BASE_URL + "assets/blm+mastery.png"}
                 alt="Black Mage Mastery UI"
+                width={400}
+                height={300}
                 loading="lazy"
                 decoding="async"
               />
             </figure>
             <figure class="media">
-              <img
-                src="/assets/mastery.png"
+              <Image
+                src={import.meta.env.BASE_URL + "assets/mastery.png"}
                 alt="Mastery overview"
+                width={400}
+                height={300}
                 loading="lazy"
                 decoding="async"
               />
@@ -98,8 +103,8 @@ const description =
               <li>
                 Tier 2 Materia earned through Dynamis, Sea, <abbr
                   title="Zeni Notorious Monsters">ZNMs</abbr
-                >, <abbr title="High Notorious Monsters">HNMs</abbr>, quests,
-                missions, and other content
+                >, <abbr title="High Notorious Monsters">HNMs</abbr>, missions,
+                and other content
               </li>
               <li>
                 Materia can be acquired from Oboro and specialist <abbr
@@ -114,25 +119,31 @@ const description =
           </article>
           <aside class="media-stack">
             <figure class="media">
-              <img
-                src="/assets/int+rod.png"
+              <Image
+                src={import.meta.env.BASE_URL + "assets/int+rod.png"}
                 alt="INT Rod with materia"
+                width={400}
+                height={300}
                 loading="lazy"
                 decoding="async"
               />
             </figure>
             <figure class="media">
-              <img
-                src="/assets/Hauby+materia.png"
+              <Image
+                src={import.meta.env.BASE_URL + "assets/Hauby+materia.png"}
                 alt="Haubergeon with materia"
+                width={400}
+                height={300}
                 loading="lazy"
                 decoding="async"
               />
             </figure>
             <figure class="media">
-              <img
-                src="/assets/ffxi+materia.png"
+              <Image
+                src={import.meta.env.BASE_URL + "assets/ffxi+materia.png"}
                 alt="Materia UI"
+                width={400}
+                height={300}
                 loading="lazy"
                 decoding="async"
               />
@@ -164,10 +175,12 @@ const description =
           </article>
           <aside class="media-stack">
             <figure class="media level-up-media" style="margin-inline: auto">
-              <img
+              <Image
                 class="level-up-img"
-                src="/assets/level-up.png"
+                src={import.meta.env.BASE_URL + "assets/level-up.png"}
                 alt="Level up icon"
+                width={200}
+                height={200}
                 loading="lazy"
                 decoding="async"
               />
@@ -201,17 +214,21 @@ const description =
           </article>
           <aside class="media-stack">
             <figure class="media">
-              <img
-                src="/assets/shiny+merit.png"
+              <Image
+                src={import.meta.env.BASE_URL + "assets/shiny+merit.png"}
                 alt="Shiny merit example"
+                width={400}
+                height={300}
                 loading="lazy"
                 decoding="async"
               />
             </figure>
             <figure class="media">
-              <img
-                src="/assets/SLIME.png"
+              <Image
+                src={import.meta.env.BASE_URL + "assets/SLIME.png"}
                 alt="Slime example"
+                width={400}
+                height={300}
                 loading="lazy"
                 decoding="async"
               />
@@ -246,17 +263,21 @@ const description =
           </article>
           <aside class="media-stack">
             <figure class="media">
-              <img
-                src="/assets/Moogle3.png"
+              <Image
+                src={import.meta.env.BASE_URL + "assets/Moogle3.png"}
                 alt="Explorer Moogle"
+                width={400}
+                height={300}
                 loading="lazy"
                 decoding="async"
               />
             </figure>
             <figure class="media">
-              <img
-                src="/assets/moogle+dialogue.png"
+              <Image
+                src={import.meta.env.BASE_URL + "assets/moogle+dialogue.png"}
                 alt="Moogle dialogue"
+                width={400}
+                height={300}
                 loading="lazy"
                 decoding="async"
               />
@@ -289,9 +310,11 @@ const description =
           </article>
           <aside class="media-stack">
             <figure class="media">
-              <img
-                src="/assets/currency.png"
+              <Image
+                src={import.meta.env.BASE_URL + "assets/currency.png"}
                 alt="Dynamis currency"
+                width={400}
+                height={300}
                 loading="lazy"
                 decoding="async"
               />
@@ -340,9 +363,11 @@ const description =
           </article>
           <aside class="media-stack">
             <figure class="media">
-              <img
-                src="/assets/king-behemoth.jpg"
+              <Image
+                src={import.meta.env.BASE_URL + "assets/king-behemoth.jpg"}
                 alt="King Behemoth"
+                width={400}
+                height={300}
                 loading="lazy"
                 decoding="async"
               />
@@ -370,25 +395,32 @@ const description =
           </article>
           <aside class="media-stack">
             <figure class="media">
-              <img
-                src="/assets/hnm+currency.png"
+              <Image
+                src={import.meta.env.BASE_URL + "assets/hnm+currency.png"}
                 alt="HNM currency"
+                width={400}
+                height={300}
                 loading="lazy"
                 decoding="async"
               />
             </figure>
             <figure class="media">
-              <img
-                src="/assets/simurg+pic.png"
+              <Image
+                src={import.meta.env.BASE_URL + "assets/simurg+pic.png"}
                 alt="HNM shop"
+                width={400}
+                height={300}
                 loading="lazy"
                 decoding="async"
               />
             </figure>
             <figure class="media">
-              <img
-                src="/assets/buying+trotter+boots.png"
+              <Image
+                src={import.meta.env.BASE_URL +
+                  "assets/buying+trotter+boots.png"}
                 alt="Buying from HNM shop"
+                width={400}
+                height={300}
                 loading="lazy"
                 decoding="async"
               />
@@ -435,9 +467,11 @@ const description =
           </article>
           <aside class="media-stack">
             <figure class="media maat-media">
-              <img
-                src="/assets/maat.png"
+              <Image
+                src={import.meta.env.BASE_URL + "assets/maat.png"}
                 alt="Maat from Final Fantasy XI"
+                width={300}
+                height={400}
                 loading="lazy"
                 decoding="async"
               />
@@ -488,9 +522,11 @@ const description =
           </article>
           <aside class="media-stack">
             <figure class="media">
-              <img
-                src="/assets/image-asset.png"
+              <Image
+                src={import.meta.env.BASE_URL + "assets/image-asset.png"}
                 alt="Empyrean weapon"
+                width={400}
+                height={300}
                 loading="lazy"
                 decoding="async"
               />
@@ -514,9 +550,11 @@ const description =
           </article>
           <aside class="media-stack">
             <figure class="media" style="margin-inline: auto">
-              <img
-                src="/assets/Merit+changes.png"
+              <Image
+                src={import.meta.env.BASE_URL + "assets/Merit+changes.png"}
                 alt="Merit changes overview"
+                width={400}
+                height={300}
                 loading="lazy"
                 decoding="async"
               />
@@ -526,7 +564,7 @@ const description =
       </div>
     </div>
     <p class="container more-details">
-      ...And so much more! Check out the discord for even more details
+      ...And so much more! Check out the Discord for even more details
     </p>
   </main>
 </BaseLayout>

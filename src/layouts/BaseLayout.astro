@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+
 const {
   title = "Eventide XI - Final Fantasy XI Private Server",
   description = "Eventide XI is a highly custom 75-cap FFXI private server.",
@@ -43,6 +45,19 @@ const url = Astro.url;
       href="/assets/backgroundtest2.png"
       fetchpriority="high"
     />
+    <link
+      rel="preload"
+      as="font"
+      href="/assets/fonts/Manrope-Regular.woff2"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="/assets/eventideXI.png"
+      fetchpriority="high"
+    />
     <slot name="head" />
     <style>
       .skip-nav {
@@ -65,9 +80,11 @@ const url = Astro.url;
     <header>
       <div class="nav">
         <a href="/" class="nav-logo-link" aria-label="Home">
-          <img
+          <Image
             src="/assets/blue-slime.png"
             alt="Blue slime"
+            width={65}
+            height={65}
             loading="eager"
             fetchpriority="high"
           />
