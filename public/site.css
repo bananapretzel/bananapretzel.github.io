@@ -114,7 +114,7 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: url("assets/backgroundtest2.png") center/cover no-repeat;
+  background: url("assets/background.webp") center/cover no-repeat;
   z-index: -1;
   pointer-events: none;
 }
@@ -587,7 +587,7 @@ main .split, main .split-reverse {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background-image: url("assets/blue-slime.png");
+  background-image: url("assets/blue-slime.webp");
   background-repeat: no-repeat;
   background-position: center calc(50% - 50px);
   background-size: 700px;
