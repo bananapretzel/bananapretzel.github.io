@@ -58,6 +58,13 @@ const url = Astro.url;
       href="/assets/eventideXI.png"
       fetchpriority="high"
     />
+    <link
+      rel="preload"
+      href="/site.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript><link rel="stylesheet" href="/site.css" /></noscript>
     <slot name="head" />
     <style>
       .skip-nav {
