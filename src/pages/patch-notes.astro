@@ -1,58 +1,13 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-// Enable server-side rendering for this page
-export const prerender = false;
-
 const title = "Patch Notes | Eventide XI";
 const description =
   "Stay up-to-date with the latest changes, bug fixes, and features on Eventide XI.";
 
-// Set cache headers: cache for 12 hours, then revalidate
-Astro.response.headers.set(
-  "Cache-Control",
-  "s-maxage=43200, stale-while-revalidate=86400",
-);
-
-// Fetch patch notes at build time from GitHub raw URL for better performance
-// This gets cached at build time and is regenerated on each deployment
+// GitHub raw JSON URL for patch notes
 const PATCH_NOTES_URL =
   "https://raw.githubusercontent.com/bananapretzel/eventide-patch-manifest/main/patch-notes.json";
-
-interface PatchNote {
-  name: string;
-  timestamp: string;
-  message: string;
-}
-
-let patchNotes: PatchNote[] = [];
-let fetchError = false;
-
-try {
-  const response = await fetch(PATCH_NOTES_URL);
-  if (!response.ok) {
-    throw new Error(`Failed to fetch patch notes: ${response.statusText}`);
-  }
-  patchNotes = await response.json();
-
-  // Sort by timestamp, most recent first
-  patchNotes.sort(
-    (a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime(),
-  );
-} catch (error) {
-  console.error("Error fetching patch notes:", error);
-  fetchError = true;
-}
-
-// Helper function to format date
-function formatDate(timestamp: string): string {
-  const date = new Date(timestamp);
-  return date.toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
-}
 ---
 
 <BaseLayout {title} {description}>
@@ -79,39 +34,138 @@ function formatDate(timestamp: string): string {
     })}
   />
 
-  <main class="container-patch-notes" id="main-content">
-    <h1 class="h1-gradient-title" style="text-align: center;">Patch Notes</h1>
+  <main class="container container-patch-notes" id="main-content">
+    <h1>Patch Notes</h1>
 
-    {
-      fetchError ? (
-        <div class="error-message">
-          <p style="text-align: center; color: #dc3545;">
-            Unable to load patch notes at this time. Please try again later.
-          </p>
-        </div>
-      ) : patchNotes.length === 0 ? (
-        <div class="loading-message">
-          <p style="text-align: center;">Loading patch notes...</p>
-        </div>
-      ) : (
-        <div class="patch-notes-list">
-          {patchNotes.map((note) => (
-            <article class="patch-note">
-              <header class="patch-note-header">
-                <h2 class="patch-note-author">{note.name}</h2>
-                <time class="patch-note-date" datetime={note.timestamp}>
-                  {formatDate(note.timestamp)}
-                </time>
-              </header>
-              <div class="patch-note-content">
-                {note.message.split("\n").map((line) => (
-                  <p>{line}</p>
-                ))}
-              </div>
-            </article>
-          ))}
-        </div>
-      )
-    }
+    <div id="patch-notes-root" class="patch-notes-list" aria-live="polite">
+      <div class="loading-message">
+        <p>Loading patch notes...</p>
+      </div>
+    </div>
   </main>
+  <script type="module">
+    const PATCH_NOTES_URL =
+      "https://raw.githubusercontent.com/bananapretzel/eventide-patch-manifest/main/patch-notes.json";
+    const CACHE_KEY = "eventidexi-patch-notes-cache-v1";
+    const CACHE_TTL_MS = 12 * 60 * 60 * 1000; // 12 hours
+
+    function formatDate(timestamp) {
+      const date = new Date(timestamp);
+      return date.toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      });
+    }
+
+    function renderPatchNotes(notes) {
+      const root = document.getElementById("patch-notes-root");
+      if (!root) return;
+
+      root.innerHTML = "";
+
+      if (!Array.isArray(notes) || notes.length === 0) {
+        const empty = document.createElement("div");
+        empty.className = "loading-message";
+        empty.innerHTML = "<p>No patch notes available yet.</p>";
+        root.appendChild(empty);
+        return;
+      }
+
+      notes.forEach((note) => {
+        const article = document.createElement("article");
+        article.className = "patch-note";
+
+        const header = document.createElement("header");
+        header.className = "patch-note-header";
+
+        const author = document.createElement("h2");
+        author.className = "patch-note-author";
+        author.textContent = note.name || "Unknown";
+
+        const time = document.createElement("time");
+        time.className = "patch-note-date";
+        time.dateTime = note.timestamp || "";
+        time.textContent = note.timestamp ? formatDate(note.timestamp) : "";
+
+        header.appendChild(author);
+        header.appendChild(time);
+
+        const content = document.createElement("div");
+        content.className = "patch-note-content";
+
+        const lines = (note.message || "").split("\n");
+        lines.forEach((line) => {
+          const p = document.createElement("p");
+          p.textContent = line;
+          content.appendChild(p);
+        });
+
+        article.appendChild(header);
+        article.appendChild(content);
+        root.appendChild(article);
+      });
+    }
+
+    function loadFromCache() {
+      try {
+        const raw = window.localStorage.getItem(CACHE_KEY);
+        if (!raw) return null;
+        const cached = JSON.parse(raw);
+        if (!cached || !cached.timestamp || !cached.notes) return null;
+        if (Date.now() - cached.timestamp > CACHE_TTL_MS) return null;
+        return cached.notes;
+      } catch {
+        return null;
+      }
+    }
+
+    function saveToCache(notes) {
+      try {
+        const payload = { timestamp: Date.now(), notes };
+        window.localStorage.setItem(CACHE_KEY, JSON.stringify(payload));
+      } catch {
+        // Ignore storage errors (e.g. private mode)
+      }
+    }
+
+    async function fetchPatchNotes() {
+      const root = document.getElementById("patch-notes-root");
+      try {
+        const response = await fetch(PATCH_NOTES_URL, {
+          headers: { Accept: "application/json" },
+        });
+        if (!response.ok) {
+          throw new Error(`Failed to fetch patch notes: ${response.status}`);
+        }
+        const notes = await response.json();
+        notes.sort(
+          (a, b) =>
+            new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime(),
+        );
+        renderPatchNotes(notes);
+        saveToCache(notes);
+      } catch (error) {
+        console.error("Error fetching patch notes", error);
+        const cached = loadFromCache();
+        if (cached) {
+          renderPatchNotes(cached);
+        } else if (root) {
+          root.innerHTML =
+            '<div class="error-message"><p>Unable to load patch notes at this time. Please try again later.</p></div>';
+        }
+      }
+    }
+
+    (function init() {
+      const cached = loadFromCache();
+      if (cached) {
+        renderPatchNotes(cached);
+        // Also refresh in background
+        fetchPatchNotes();
+      } else {
+        fetchPatchNotes();
+      }
+    })();
+  </script>
 </BaseLayout>
