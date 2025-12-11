@@ -784,11 +784,7 @@ main .split, main .split-reverse {
   }
 }
 
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 3rem 1rem;
-}
+
 
 h1 {
   margin-bottom: 3rem;
@@ -856,8 +852,8 @@ h1 {
 }
 
 .patch-note-content p {
-  margin-top: 12px;
-  margin-bottom: 12px;
+  margin-top: 14px;
+  margin-bottom: 14px;
   white-space: pre-wrap;
   word-wrap: break-word;
   line-height: 1.25rem;
