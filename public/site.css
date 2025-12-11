@@ -833,6 +833,7 @@ h1 {
   align-items: center;
   flex-wrap: wrap;
   gap: 0.5rem;
+  text-shadow: none;
 }
 
 .patch-note-author {
@@ -849,7 +850,7 @@ h1 {
 }
 
 .patch-note-content {
-  padding: 1.5rem;
+  padding: 1rem;
   color: #4a5568;
   line-height: 1;
 }
