@@ -114,13 +114,27 @@ const url = Astro.url;
                     >Home</a
                   >
                 </li>
-                <li>
-                  <a
-                    href="/custom-changes"
-                    aria-current={url.pathname.startsWith("/custom-changes")
-                      ? "page"
-                      : undefined}>Custom Changes</a
+                <li class="dropdown">
+                  <button class="dropdown-trigger" aria-expanded="false"
+                    >Custom Changes</button
                   >
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a href="/custom-changes">Overview</a>
+                    </li>
+                    <li>
+                      <a href="/jobs">Job Changes</a>
+                    </li>
+                    <li>
+                      <a href="/relics">Relics</a>
+                    </li>
+                    <li>
+                      <a href="/empyreans">Empyreans</a>
+                    </li>
+                    <li>
+                      <a href="/server-info">Misc & Server Info</a>
+                    </li>
+                  </ul>
                 </li>
                 <li>
                   <a
@@ -164,6 +178,7 @@ const url = Astro.url;
       </p>
     </footer>
     <script src="/assets/js/burger-menu.js" type="module" defer></script>
+    <script src="/assets/js/dropdown.js" defer></script>
     <script src="/assets/js/play.js" defer></script>
   </body>
 </html>

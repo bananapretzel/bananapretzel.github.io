@@ -1,0 +1,147 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const title = "Relics & Empyreans | Eventide XI";
+const description =
+    "Information on Relic and Empyrean weapon changes, aftermaths, and acquisition.";
+---
+
+<BaseLayout {title} {description}>
+    <main class="container" id="main-content">
+        <h1 class="h1-gradient-title">Relics & Empyreans</h1>
+        <div class="info-dump" style="padding: 0 20px 40px;">
+            <p class="content-intro">
+                Eventide XI features enhanced progression for both Relic and
+                Empyrean weapons with custom aftermaths and expanded job access.
+            </p>
+
+            <section id="empyrean" class="weapon-section">
+                <h2>Empyrean Weapons</h2>
+                <p>
+                    Relics and their aftermath effects have been completley overhauled and redesigned to increase their power and usability. In era-accurate servers, it might take you over a year to obtain a relic but on <strong>Eventide</strong> we've drastically reduced the amount of time needed to invest so that players can finally enjoy seeing the fruits of their labour without getting burned out. Dynamis can only be run once a week but hundos can drop to individual participants at an average rate of 10-20 per run. Expect to get your relic weapon within three month of regular dynamis runs.
+                </p>
+                <ul>
+                    <li>
+                        Joachim in Port Jeuno assists in acquiring Empyrean
+                        weapons.
+                    </li>
+                    <li>All Empyrean weapons are now available.</li>
+                    <li>Vrtra enabled as T4 HNM for Empyrean weapons.</li>
+                    <li>
+                        Empyrean weapon aftermath proc rate increased/corrected.
+                    </li>
+                    <li>
+                        All Empyrean aftermath durations standardized to 120
+                        seconds.
+                    </li>
+                    <li>
+                        Empyrean weapon power adjusted to ensure linear growth
+                        from Relic > Empy.
+                    </li>
+                    <li>GEO added to Empyrean Club tree.</li>
+                </ul>
+
+                <h3>Specific Empyrean Aftermaths</h3>
+                <ul>
+                    <li>
+                        <strong>Mjollnir (WHM):</strong> Refresh: 5, ACC: 50, NA Spells
+                        AOE, Attack % Bonus: 20
+                    </li>
+                    <li>
+                        <strong>Excalibur (BLU):</strong> Refresh: 5, AbilityHaste:
+                        15%, Regain: 30
+                    </li>
+                    <li>
+                        <strong>Excalibur (PLD):</strong> Refresh: 5, Regen: 5, ACC:
+                        50, DMG%: 5, Attack % Bonus: 20
+                    </li>
+                </ul>
+            </section>
+
+            <section id="relic" class="weapon-section">
+                <h2>Relic Weapons</h2>
+                <p>
+                    All changes, additions, and aftermaths related to Relic
+                    weapons:
+                </p>
+
+                <h3>Power and Scaling</h3>
+                <ul>
+                    <li>
+                        Relic weapon skills increased in power (1H:
+                        3.75/4.25/4.5 FTP, 2H: 2.75/3.25/3.5 FTP).
+                    </li>
+                    <li>
+                        Relic WS should always outperform TP Bonus weapons using
+                        non-relic WS.
+                    </li>
+                    <li>
+                        Relic multi-hit WSNM WS adjusted down to balance
+                        progression (Evisceration, Black Halo, Decimation,
+                        Asuran Fists, Blade: Ku, Savage Blade).
+                    </li>
+                    <li>
+                        Overall WSNM multi-hit weapons now use 2.5/2.75/3.0 FTP
+                        to maintain linear power progression.
+                    </li>
+                </ul>
+
+                <h3>Job Expansions</h3>
+                <ul>
+                    <li>
+                        <strong>BLU</strong> added to Relic Sword tree: Relic Sword,
+                        Glyptic Sword, Dynamis Sword, Caliburn, Excalibur.
+                    </li>
+                    <li>
+                        <strong>PUP</strong> added to Relic Knuckles tree: Relic Knuckles,
+                        Militant Knuckles, Dynamis Knuckles, Caestus, Spharai.
+                    </li>
+                    <li>
+                        <strong>COR</strong> added to Relic Gun tree: Relic Gun, Marksman
+                        Gun, Dynamis Gun, Ferdinand, Annihilator.
+                    </li>
+                    <li><strong>GEO</strong> added to Relic Club tree.</li>
+                </ul>
+
+                <h3>Melee Relic Aftermaths (Standardized)</h3>
+                <ul>
+                    <li>
+                        <strong>Jobs affected:</strong> MNK, THF, DRK, WAR, BST, DRG,
+                        SAM, NIN
+                    </li>
+                    <li>
+                        <strong>Effects:</strong> 5% Crit Hit Rate, 5 Subtle Blow
+                        II, 5% Ability Haste, 5 Store TP, 5% Damage Reduction
+                    </li>
+                    <li>
+                        <strong>Duration:</strong> 120 seconds (standardized)
+                    </li>
+                </ul>
+
+                <h3>Ranged Relic Aftermaths</h3>
+                <ul>
+                    <li><strong>Jobs affected:</strong> COR, RNG</li>
+                    <li>
+                        <strong>Effects:</strong> 5% Crit Hit Rate, +20 Ranged Accuracy,
+                        5% Snapshot, -20 Enmity, 5% Haste
+                    </li>
+                    <li>
+                        <strong>Duration:</strong> 120 seconds (standardized)
+                    </li>
+                </ul>
+
+                <h3>Special Mechanics</h3>
+                <ul>
+                    <li>Relic Shield returned on Amaltheia death.</li>
+                    <li>
+                        Coronarch aftermath now procs even if it misses or does
+                        0 damage.
+                    </li>
+                    <li>
+                        Pet jobs (BST) - pets inherit relic aftermath effects.
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </main>
+</BaseLayout>

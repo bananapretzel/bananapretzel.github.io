@@ -1,0 +1,287 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const title = "Misc & Server Info | Eventide XI";
+const description =
+    "Detailed server rates, settings, quality of life features, and configuration for Eventide XI.";
+---
+
+<BaseLayout {title} {description}>
+    <main class="container" id="main-content">
+        <h1 class="h1-gradient-title">Misc & Server Info</h1>
+        <div class="info-dump" style="padding: 0 20px 40px;">
+            <p class="content-intro">
+                Core settings, rates, and quality of life features on Eventide
+                XI.
+            </p>
+
+            <section class="weapon-section">
+                <h2>Server Rates & Settings</h2>
+                <div class="server-info-grid">
+                    <div class="server-info-item">
+                        <strong>Level Cap:</strong> 75
+                    </div>
+                    <div class="server-info-item">
+                        <strong>Expansion:</strong> ToAU
+                    </div>
+                    <div class="server-info-item">
+                        <strong>Server Type:</strong> Single-box
+                    </div>
+                    <div class="server-info-item">
+                        <strong>Trusts:</strong> Disabled
+                    </div>
+                    <div class="server-info-item">
+                        <strong>Accounts:</strong> Multiple with 3 characters per
+                        account
+                    </div>
+                    <div class="server-info-item">
+                        <strong>EXP Rate:</strong> Custom (materia lets you control the rate, expect an exceptional increase)
+                    </div>
+                    <div class="server-info-item">
+                        <strong>Drop Rate:</strong> 1x
+                    </div>
+                    <div class="server-info-item">
+                        <strong>Crafting Rate:</strong> 1x
+                    </div>
+                    <div class="server-info-item">
+                        <strong>Fame Rate:</strong> 1.5x
+                    </div>
+                    <div class="server-info-item">
+                        <strong>Run Speed:</strong> 1x
+                    </div>
+                    <div class="server-info-item">
+                        <strong>Wardrobes:</strong> All 8 unlocked
+                    </div>
+                    <div class="server-info-item">
+                        <strong>Jobs:</strong> All ToAU jobs + Geomancer (more coming soon)
+                    </div>
+                </div>
+            </section>
+
+            <section class="weapon-section">
+                <h2>Quality of Life Features</h2>
+                <ul>
+                    <li>
+                        <strong>Nation Rings:</strong> Not tied to races, any race
+                        can use any nation ring
+                    </li>
+                    <li>
+                        <strong>Level-sync:</strong> Unlimited. Level 75s can sync
+                        down to a Dunes party if they wish
+                    </li>
+                    <li>
+                        <strong>Teleport:</strong> Custom teleports between cities,
+                        merit party camps, and BCNMs
+                    </li>
+                    <li><strong>Satchel:</strong> Unlocked after doing the final Gobbie Bag mission</li>
+                    <li>Altepa Gate now opens from the front if your nation rank is 6 or higher.</li>
+                    <li>Churano-Shurano now sells Magicked Astrolabe Key item for The Eldieme Necropolis doors.</li>
+                    <li>Avatar proto-crystal warps activated. Trade the corresponding elemental crystal to the NPC to warp. </li>
+                    <li>Garlaige Citadel Banishing Gates can be opened with a pouch of weighted stones. </li>
+                    <li>Herder's Subligar and Thrakon Breastplate added to Roc</li>
+                    <li>Tier 1 Beastman inside Ghelsba Outpost, Giddeus, and Dangurf Wadi are now level 1.</li>
+                    <li>Outpost warps are obtainable by all nations regardless of which nation owns it.</li>
+                    <li>There is a fast travel available between the 3 major cities. Simply talk to the explorer Moogle for instructions.</li>
+                    <li>Dynamis will drop individual personal currency for everyone participating. Currency will be EX and intended so everyone can work toward their own relic and not be forced to funnel currency.</li>
+                    <li>Block, guard, and parry radius increased.</li>
+                    <li>Block, guard, and parry can now gain skill ups regardless if they proc'd or not.</li>
+                    <li></li>
+                    
+                </ul>
+            </section>
+
+            <section class="weapon-section">
+                <h2>Notorious Monster Changes</h2>
+                <p>NM's have had a relatively major difficulty increase. The following stats have been increased relative to the NMs level. NM's will gain stats equal to their level. IE: If Valkurm Emperor spawns at lvl 30 he gains an extra 30 of the below stats. Note that this does not apply to any battlefield monsters.
+                    <ul>
+                        <li>Defense</li>
+                        <li>Evasion</li>
+                        <li>Attack</li>
+                        <li>Ranged Attack</li>
+                        <li>Accuracy</li>
+                        <li>Ranged Accuracy</li>
+                        <li>Magic Accuracy</li>
+                        <li>Magic Evasion</li>
+                                            </ul>
+                </p>
+                </section>
+
+            <section class="weapon-section">
+                <h2>Player Melee Crit Rate</h2>
+                <p>
+                    The crit rate system has been overhauled. It is based on the stat delta between your <abbr
+                        title="Dexterity">DEX</abbr
+                    > and the mob's <abbr title="Agility">AGI</abbr>:
+                </p>
+                <ul>
+                    <li><strong>Base Crit Rate:</strong> 5%</li>
+                    <li>
+                        <strong>Stat Delta:</strong> (Player DEX) - (Monster AGI), capped
+                        at 50
+                    </li>
+                </ul>
+                <h3>Crit Rate by Stat Delta</h3>
+                <ul>
+                    <li><strong>7-13 Delta:</strong> Base + 1% = 6%</li>
+                    <li><strong>14-19 Delta:</strong> Base + 2% = 7%</li>
+                    <li><strong>20-29 Delta:</strong> Base + 3% = 8%</li>
+                    <li><strong>30-39 Delta:</strong> Base + 4% = 9%</li>
+                    <li>
+                        <strong>40-50 Delta:</strong> Base + (Delta - 35) = 10-20%
+                    </li>
+                </ul>
+                <p>
+                    <strong>Maximum crit rate from base + DEX:</strong> 20%<br />
+                    Merits and gear mods apply after this calculation and can exceed the
+                    20% cap.
+                </p>
+            </section>
+
+            <section class="weapon-section">
+                <h2>Chocobo Digging</h2>
+                <ul>
+                    <li>Player digging cap of 100 per real world day</li>
+                    <li>No zone caps</li>
+                    <li>Player digging cap increases by 10 per rank up</li>
+                    <li>Dig delays are standard</li>
+                    <li>
+                        Messages will appear in the log for skill ups, rank ups, etc.
+                    </li>
+                </ul>
+                <h3>Skill Up Rates (per item dug)</h3>
+                <ul>
+                    <li><strong>Rank 0:</strong> 10%</li>
+                    <li><strong>Rank 1:</strong> 5.00%</li>
+                    <li><strong>Rank 2:</strong> 3.33%</li>
+                    <li><strong>Rank 3:</strong> 2.50%</li>
+                    <li><strong>Rank 4:</strong> 2.00%</li>
+                    <li><strong>Rank 5:</strong> 1.66%</li>
+                    <li><strong>Rank 6:</strong> 1.42%</li>
+                    <li><strong>Rank 7:</strong> 1.25%</li>
+                    <li><strong>Rank 8:</strong> 1.11%</li>
+                    <li><strong>Rank 9:</strong> 1.00%</li>
+                </ul>
+                <h3>Average Time to Rank</h3>
+                <ul>
+                    <li>Rank 0 → 1: ~10 days</li>
+                    <li>Rank 1 → 2: ~18 days</li>
+                    <li>Rank 2 → 3: ~25 days</li>
+                    <li>Rank 3 → 4: ~30 days</li>
+                    <li>Rank 4 → 5: ~36 days</li>
+                    <li>Rank 5 → 6: ~40 days</li>
+                </ul>
+            </section>
+
+            <section class="weapon-section">
+                <h2>Detailed Merit Breakdown</h2>
+                <p>The maximum merits a player can hold has been increased to 15 and certain merit categories and their limits have also been increased. This means you don't have to spec into one or two builds; you can add merit points to a wide variety of skills. The cost and category limits are as follows:</p>
+                <h3>HP, MP, Additional Merits (Category Limit: 25)</h3>
+                <ul>
+                    <li>
+                        <strong>HP (10 levels):</strong> 1, 2, 3, 4, 5, 15, 15, 15, 15, 15
+                    </li>
+                    <li>
+                        <strong>MP (10 levels):</strong> 1, 2, 3, 4, 5, 15, 15, 15, 15, 15
+                    </li>
+                    <li>
+                        <strong>Max Merits (5 levels):</strong> 10, 11, 12, 13, 14
+                    </li>
+                </ul>
+                <h3>Attributes (Category Limit: 70)</h3>
+                <ul>
+                    <li>
+                        <strong>All Stats (10 levels):</strong> 3, 6, 9, 9, 9, 15, 15, 15,
+                        15, 15
+                    </li>
+                </ul>
+                <h3>Combat Skills (Category Limit: 120)</h3>
+                <ul>
+                    <li>
+                        <strong>All Skills (15 levels):</strong> 1, 2, 3, 3, 3, 3, 3, 3, 15,
+                        15, 15, 15, 15, 15, 15
+                    </li>
+                </ul>
+                <h3>Magic Skills (Category Limit: 75)</h3>
+                <ul>
+                    <li>
+                        <strong>All Skills (15 levels):</strong> 1, 2, 3, 3, 3, 3, 3, 3, 15,
+                        15, 15, 15, 15, 15, 15
+                    </li>
+                </ul>
+                <h3>Other (Category Limit: 20)</h3>
+                <ul>
+                    <li><strong>All (5 levels):</strong> 1, 2, 3, 4, 5</li>
+                </ul>
+            </section>
+
+            <section class="weapon-section">
+                <h2><abbr title="High Notorious Monster">HNM</abbr> Tier List</h2>
+                <ul>
+                    <li>
+                        <strong>Tier 1:</strong> Serket, King Arthro, Roc, Simurgh, Capricious
+                        Cassie, Adamantoise
+                    </li>
+                    <li><strong>Tier 2:</strong> Behemoth, Fafnir, Aspidochelone</li>
+                    <li>
+                        <strong>Tier 3:</strong> King Behemoth, Nidhogg, Cerberus, Hydra,
+                        Khimaira
+                    </li>
+                    <li><strong>Tier 4:</strong> Tiamat, Vrtra, Jormungand</li>
+                </ul>
+            </section>
+
+            <section class="weapon-section">
+                <h2>Lottery <abbr title="Notorious Monsters">NMs</abbr></h2>
+                <p>
+                    The following <abbr title="Notorious Monsters">NMs</abbr> have been
+                    changed to true lottery (no cooldown on repop) with 4-5 placeholders
+                    each:
+                </p>
+                <ul>
+                    <li>Mee Deggi the Punisher</li>
+                    <li>Quu Domi the Gallant</li>
+                    <li>Hoo Mjuu The Torrent</li>
+                    <li>Valkurm Emperor</li>
+                    <li>Eastern Shadow</li>
+                    <li>Western Shadow</li>
+                    <li>Northern Shadow</li>
+                    <li>Southern Shadow</li>
+                    <li>Cargo Crab Colin</li>
+                </ul>
+            </section>
+
+            <section class="weapon-section">
+                <h2>
+                    New/Adjusted <abbr title="Experience Points">EXP</abbr> Camps
+                </h2>
+                <ul>
+                    <li>
+                        <strong>Purgonorgo Isle Bird Camp (I-9):</strong> Lv 54-56 Toucan
+                        (does not link)
+                    </li>
+                    <li>
+                        <strong>Purgonorgo Isle Pugil Camp (F-9):</strong> Lv 54-56 Pugils
+                    </li>
+                    <li>
+                        <strong>Colibri Camp Wajom Woodlands:</strong> Added 2 more birds
+                        to zone line camp, added more birds to ley point (supports 2 parties)
+                    </li>
+                </ul>
+            </section>
+
+            <section class="weapon-section">
+                <h2>Pet Duo Camps</h2>
+                <p>EXP is nerfed with more than 2 in a party at these camps:</p>
+                <ul>
+                    <li>
+                        <strong>Sauromugue Champaign (H-10):</strong> Duo Pet Camp
+                    </li>
+                    <li><strong>Batallia Downs (K-8):</strong> Duo Pet Camp</li>
+                    <li>
+                        <strong>Xarcabard (H-7):</strong> Duo Pet Camp (Behind Tele-Vahzl)
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </main>
+</BaseLayout>

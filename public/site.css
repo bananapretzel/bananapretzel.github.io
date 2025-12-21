@@ -81,7 +81,7 @@
 :root {
   --text: #000;
   --accent: #2563eb;
-  --accent-3: #8b5cf6;
+  --accent-3: #399169;
   --cluster-gap: clamp(12px, 6vw, 300px);
   --color-light: #fff;
   --dark-navy: #0f172a;
@@ -158,8 +158,8 @@ p {
 
 ul {
   padding-left: 1.2rem;
-  margin: .25rem 0 .75rem;
-  display: inline-block;
+  margin: 1rem 1rem;
+  display: block;
   text-align: left;
 }
 
@@ -344,7 +344,7 @@ header {
   white-space: nowrap;
   min-width: max-content;
   max-width: 100%;
-  overflow-x: auto;
+  overflow: visible;
   scrollbar-width: none;
 }
 
@@ -360,8 +360,13 @@ header {
   padding: 0;
 }
 
-.menu>ul, .menu>ul>li {
+.menu>ul, .menu>ul>li:not(.dropdown) {
   display: contents;
+}
+
+.menu>ul>li.dropdown {
+  display: block;
+  position: relative;
 }
 
 nav a {
@@ -896,4 +901,352 @@ h1 {
   .patch-note-content {
     padding: 1rem;
   }
+}
+
+/* Dropdown Styles */
+.menu .dropdown {
+  margin: 0 12px;
+}
+
+.dropdown-trigger {
+  background: none;
+  border: none;
+  color: #fff;
+  font-family: "Oswald";
+  font-size: 22px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 8px;
+  opacity: .95;
+  transition: background-color 200ms ease, transform 200ms ease, opacity 150ms ease;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.dropdown-trigger:hover, .dropdown-trigger[aria-expanded="true"] {
+  opacity: 1;
+  background-color: rgba(255, 255, 255, .1);
+  transform: translateX(4px);
+}
+
+.dropdown-trigger::after {
+  content: "▼";
+  font-size: 12px;
+  margin-left: 4px;
+  transition: transform 0.2s ease;
+}
+
+.dropdown-trigger[aria-expanded="true"]::after {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--dark-navy);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  padding: 8px 0;
+  min-width: 200px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  z-index: 100000;
+  list-style: none;
+  margin: 0;
+  display: none;
+}
+
+.dropdown.open .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu li {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px 16px;
+  margin: 0;
+  font-size: 18px;
+  white-space: nowrap;
+  border-radius: 0;
+  color: #fff;
+  text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  text-decoration: none;
+}
+
+/* Mobile adjustments for dropdown */
+@media (max-width: 768px) {
+  .menu .dropdown {
+    margin: 0;
+    width: 100%;
+  }
+
+  .dropdown-trigger {
+    width: 100%;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    font-size: 1.2rem;
+  }
+
+  .dropdown-menu {
+    position: static;
+    width: 100%;
+    box-shadow: none;
+    border: none;
+    background: rgba(0, 0, 0, 0.3);
+    padding-left: 1rem;
+  }
+
+  .dropdown.open .dropdown-menu {
+    display: block;
+  }
+}
+
+/* Job and Content Page Styles */
+.job-section {
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 12px;
+  padding: 24px 28px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.job-section h2 {
+  color: #1a365d;
+  font-size: 1.75rem;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #76ebe2;
+}
+
+.job-section h3 {
+  color: #2d3748;
+  font-size: 1.25rem;
+  margin: 20px 0 12px;
+  text-align: left;
+}
+
+.job-section ul {
+  margin-bottom: 16px;
+}
+
+.job-section li {
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+.content-intro {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 32px;
+  color: #4a5568;
+}
+
+.job-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 32px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 8px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.job-nav a {
+  padding: 6px 14px;
+  background: var(--dark-navy);
+  color: #fff;
+  border-radius: 20px;
+  font-size: 14px;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.job-nav a:hover {
+  background: #399169;
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+/* Back to top button */
+#back-to-top {
+  position: fixed !important;
+  bottom: 30px !important;
+  right: 30px !important;
+  background: var(--dark-navy);
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  z-index: 9999 !important;
+  opacity: 0;
+  visibility: hidden;
+}
+
+#back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+#back-to-top:hover {
+  background: #399169;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Weapon section styles */
+.weapon-section {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 24px 28px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.weapon-section h2 {
+  color: #1a365d;
+  font-size: 1.75rem;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #76ebe2;
+}
+
+.weapon-section h3 {
+  color: #2d3748;
+  font-size: 1.2rem;
+  margin: 20px 0 12px;
+  text-align: left;
+}
+
+/* Server info styles */
+.server-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.server-info-item {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 16px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  border-left: 4px solid #76ebe2;
+}
+
+.server-info-item strong {
+  color: #1a365d;
+}
+
+/* Relic weapons styles */
+.relic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+@media (max-width: 768px) {
+  .relic-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.relic-card {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 12px;
+  padding: 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.relic-card h4 {
+  margin: 0 0 8px 0;
+  color: #1a365d;
+  font-family: "Oswald", sans-serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid #76ebe2;
+  padding-bottom: 8px;
+}
+
+.relic-card .jobs {
+  font-style: italic;
+  font-size: 0.95em;
+  margin: 8px 0 15px 0;
+  color: #2d3748;
+  font-weight: 500;
+}
+
+.relic-card>p {
+  margin: 12px 0 10px 0;
+  font-size: 1rem;
+  color: #2d3748;
+}
+
+.relic-card ul {
+  margin: 8px 0;
+  padding-left: 20px;
+  list-style-type: none;
+}
+
+.relic-card ul li {
+  margin: 6px 0;
+  font-size: 0.95em;
+  line-height: 1.6;
+  padding-left: 20px;
+  position: relative;
+  color: #2d3748;
+}
+
+.relic-card ul li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: bold;
+}
+
+.relic-card ul ul {
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
+.relic-card ul ul li::before {
+  content: "•";
+  color: #76ebe2;
+}
+
+.relic-card strong {
+  color: #1a365d;
+  font-weight: 600;
 }
